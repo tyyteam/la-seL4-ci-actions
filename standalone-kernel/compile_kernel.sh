@@ -48,9 +48,10 @@ case $INPUT_ARCH in
     loongarch64)
         extra_config="${extra_config} -DLoongarch64=TRUE"
         apt update && apt upgrade -y
-        apt-get  build-depgcc
         apt install build-essential -y
-        apt install gcc-12
+        add-apt-repository ppa:ubuntu-toolchain-r/test
+        apt-get update
+        apt-get install gcc-12 g++-12
         gcc --version
         INPUT_ARCH="Loongarch64"
         ;;
