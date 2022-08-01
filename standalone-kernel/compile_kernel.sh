@@ -47,7 +47,10 @@ case $INPUT_ARCH in
         ;;
     loongarch64)
         extra_config="${extra_config} -DLoongarch64=TRUE"
+        sudo apt update && sudo apt upgrade -y
+        sudo apt install build-essential -y
         apt install gcc-12
+        gcc --version
         INPUT_ARCH="Loongarch64"
         ;;
     X64)
