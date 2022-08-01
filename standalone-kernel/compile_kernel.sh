@@ -47,6 +47,7 @@ case $INPUT_ARCH in
         ;;
     loongarch64)
         extra_config="${extra_config} -DLoongarch64=TRUE"
+        apt install gcc-12
         INPUT_ARCH="Loongarch64"
         ;;
     X64)
