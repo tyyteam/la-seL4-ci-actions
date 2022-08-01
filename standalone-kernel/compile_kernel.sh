@@ -45,6 +45,9 @@ case $INPUT_ARCH in
     RISCV64)
         extra_config="${extra_config} -DRISCV64=TRUE"
         ;;
+    loongarch64)
+        extra_config="${extra_config} -DLoongarch64=TRUE"
+        ;;
     X64)
         # no config needed
         ;;
