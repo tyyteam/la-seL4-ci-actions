@@ -47,7 +47,6 @@ case $INPUT_ARCH in
         ;;
     loongarch64)
         extra_config="${extra_config} -DLoongarch64=TRUE"
-        gcc --version
         INPUT_ARCH="Loongarch64"
         ;;
     X64)
