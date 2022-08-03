@@ -4,7 +4,7 @@
 
 default: build
 
-IMG=sel4/cparser-run:latest
+IMG=gootal/la-cparser-run:latest
 
 build:
 	docker build -t $(IMG) -f Dockerfile ..

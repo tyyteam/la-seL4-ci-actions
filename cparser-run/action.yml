@@ -16,4 +16,4 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker://gootal/cparser-run:latest'
+  image: 'docker://gootal/la-cparser-run:latest'
