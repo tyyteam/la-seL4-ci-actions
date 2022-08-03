@@ -10,7 +10,7 @@ ARG ACTION=cparser-run
 
 FROM gootal/la-sel4:latest
 
-COPY --from=sel4/cparser-builder /c-parser /c-parser
+COPY --from=gootal/la-cparser-builder /c-parser /c-parser
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
