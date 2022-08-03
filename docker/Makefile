@@ -4,10 +4,10 @@
 
 default: build
 
-IMG=sel4/cparser-builder:latest
+IMG=gootal/la-cparser-builder:latest
 
 build:
-	docker build -t $(IMG) -f cparser-builder.dockerfile ..
+	docker build -t $(IMG) -f la-cparser-builder.dockerfile ..
 
 push: build
 	docker push $(IMG)
