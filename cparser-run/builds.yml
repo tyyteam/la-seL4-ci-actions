@@ -24,6 +24,10 @@ builds:
     platform: SPIKE64
     l4v_arch: RISCV64
 
+- Loongarch64:
+    plateform: 3A5000
+    l4v_arch: Loongarch64
+
 - AARCH32:
     platform: SABRE
     l4v_arch: ARM
