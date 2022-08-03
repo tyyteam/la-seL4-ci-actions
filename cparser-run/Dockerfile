@@ -8,7 +8,7 @@ ARG WORKSPACE=/workspace
 ARG SCRIPTS=/ci-scripts
 ARG ACTION=cparser-run
 
-FROM trustworthysystems/sel4:latest
+FROM gootal/la-sel4:latest
 
 COPY --from=sel4/cparser-builder /c-parser /c-parser
 
