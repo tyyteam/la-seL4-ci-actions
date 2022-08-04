@@ -185,7 +185,7 @@ class Platform:
     def getISA(self, mode: int) -> str:
         """Return the ISA for this platform"""
 
-        if self.arch == "Loongarch64"
+        if self.arch == "Loongarch64":
             return {64: "Loongarch64"}[mode]
 
         if self.arch == "x86":
