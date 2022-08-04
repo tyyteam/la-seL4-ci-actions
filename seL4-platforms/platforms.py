@@ -163,12 +163,14 @@ class Platform:
 
     def get_triple(self, mode: int) -> str:
         """Return toolchain prefix triple"""
-        return {"x86":   {32: "x86_64-linux-gnu",
-                          64: "x86_64-linux-gnu"},
-                "arm":   {32: "arm-linux-gnueabi",
-                          64: "aarch64-linux-gnu"},
-                "riscv": {32: "riscv32-linux-gnu",
-                          64: "riscv64-linux-gnu"}}[self.arch][mode]
+        return {
+                "Loongarch64":  {64: "loongarch64-unknown-linux-gnu"},
+                "x86":          {32: "x86_64-linux-gnu",
+                                 64: "x86_64-linux-gnu"},
+                "arm":          {32: "arm-linux-gnueabi",
+                                 64: "aarch64-linux-gnu"},
+                "riscv":        {32: "riscv32-linux-gnu",
+                                 64: "riscv64-linux-gnu"}}[self.arch][mode]
 
     def image_names(self, mode: int, root_task: str) -> list:
         """Return generated image name"""
@@ -182,6 +184,9 @@ class Platform:
 
     def getISA(self, mode: int) -> str:
         """Return the ISA for this platform"""
+
+        if self.arch == "Loongarch64"
+            return {64: "Loongarch64"}[mode]
 
         if self.arch == "x86":
             return {32: "IA32", 64: "x86_64"}[mode]

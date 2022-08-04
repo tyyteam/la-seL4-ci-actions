@@ -7,7 +7,7 @@ default: build
 IMG=gootal/la-cparser-builder:latest
 
 build:
-	docker build -t $(IMG) -f la-cparser-builder.dockerfile ..
+	docker build -t $(IMG) -f cparser-builder.dockerfile ..
 
 push: build
 	docker push $(IMG)
