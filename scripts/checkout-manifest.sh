@@ -34,6 +34,7 @@ else
 fi
 
 $REPO init ${DEPTH} -m ${REPO_MANIFEST} -b ${REPO_BRANCH} -u "${MANIFEST_URL}" --repo-url=https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/
+# --repo-url=https://gerrit-googlesource.lug.ustc.edu.cn/git-repo
 
 # if explicit manifest is provided via input XML, switch to that instead
 if [ -n "${INPUT_XML}" ]
