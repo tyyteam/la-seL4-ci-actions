@@ -153,7 +153,7 @@ class Platform:
 
     def toolchain_arch_str(self) -> str:
         """Return toolchain string for arm/riscv"""
-        return {"arm": "AARCH", "riscv": "RISCV"}.get(self.arch, "")
+        return {"arm": "AARCH", "riscv": "RISCV","Loongarch64": "loongarch"}.get(self.arch, "")
 
     def cmake_toolchain_setting(self, mode: int) -> str:
         return self.toolchain_arch_str() + str(mode)
@@ -180,6 +180,7 @@ class Platform:
             'x86':   [f"images/kernel-{im_plat}-pc99",
                       f"images/{root_task}-image-{im_plat}-pc99"],
             'riscv': [f"images/{root_task}-image-riscv-{im_plat}"],
+            'Loongarch64': [f"images/{root_task}-image-Loongarch64-{im_plat}"],
         }[self.arch]
 
     def getISA(self, mode: int) -> str:
