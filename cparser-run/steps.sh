@@ -15,6 +15,7 @@ export MANIFEST_URL="https://github.com/seL4/sel4test-manifest.git"
 checkout-manifest.sh
 
 # add Loongarch64 support
+rm -rf kernel tools/seL4 projects/*
 git clone -b dev https://github.com/tyyteam/la-seL4.git kernel
 cd tools
 git clone -b dev https://github.com/tyyteam/la-seL4_tools.git seL4
