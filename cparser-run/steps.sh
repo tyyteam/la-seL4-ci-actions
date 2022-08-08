@@ -24,6 +24,7 @@ git clone -b dev https://github.com/tyyteam/la-musllibc.git musllibc
 git clone -b dev https://github.com/tyyteam/la-sel4test.git sel4test
 git clone -b dev https://github.com/tyyteam/la-seL4_libs.git seL4_libs
 git clone -b dev https://github.com/tyyteam/la-util_libs.git util_libs
+cd ..
 
 fetch-branches.sh
 echo "::endgroup::"
