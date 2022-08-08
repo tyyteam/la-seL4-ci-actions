@@ -33,7 +33,7 @@ WORKDIR ${CP_DEST}
 ARG CP_SRC=${CPARSER_DIR}/standalone-parser
 RUN cp ${CP_SRC}/c-parser .
 RUN cp -r ${CP_SRC}/ARM ${CP_SRC}/ARM_HYP ${CP_SRC}/AARCH64 ${CP_SRC}/RISCV64 ${CP_SRC}/X64 .
-
+# TODO line 35: add ${CP_SRC}/Loongarch64
 FROM scratch
 ARG CP_DEST
 COPY --from=builder ${CP_DEST} ${CP_DEST}

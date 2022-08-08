@@ -14,6 +14,16 @@ export REPO_MANIFEST="master.xml"
 export MANIFEST_URL="https://github.com/seL4/sel4test-manifest.git"
 checkout-manifest.sh
 
+# add Loongarch64 support
+git clone -b dev https://github.com/tyyteam/la-seL4.git kernel
+cd tools
+git clone -b dev https://github.com/tyyteam/la-seL4_tools.git seL4
+cd ../projects
+git clone -b dev https://github.com/tyyteam/la-musllibc.git musllibc
+git clone -b dev https://github.com/tyyteam/la-sel4test.git sel4test
+git clone -b dev https://github.com/tyyteam/la-seL4_libs.git seL4_libs
+git clone -b dev https://github.com/tyyteam/la-util_libs.git util_libs
+
 fetch-branches.sh
 echo "::endgroup::"
 

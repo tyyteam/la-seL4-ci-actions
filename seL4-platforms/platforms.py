@@ -153,7 +153,7 @@ class Platform:
 
     def toolchain_arch_str(self) -> str:
         """Return toolchain string for arm/riscv"""
-        return {"arm": "AARCH", "riscv": "RISCV","Loongarch64": "loongarch"}.get(self.arch, "")
+        return {"arm": "AARCH", "riscv": "RISCV","Loongarch64": "Loongarch"}.get(self.arch, "")
 
     def cmake_toolchain_setting(self, mode: int) -> str:
         return self.toolchain_arch_str() + str(mode)

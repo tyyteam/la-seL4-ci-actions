@@ -90,6 +90,7 @@ class Build:
 
     def get_platform(self) -> Platform:
         """Return the Platform object for this build definition."""
+        print("hello!",self.platform)
         return platforms[self.platform]
 
     def get_mode(self) -> Optional[int]:

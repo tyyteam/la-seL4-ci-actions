@@ -16,6 +16,11 @@ default:
 #   - any other flags such as ARM_HYP, KernelVTX, MCS
 
 builds:
+
+- Loongarch64:
+    platform: 3A5000
+    l4v_arch: Loongarch64
+
 - RISCV32:
     platform: SPIKE32
     l4v_arch: ARM # only word size relevant for this test
@@ -23,10 +28,6 @@ builds:
 - RISCV64:
     platform: SPIKE64
     l4v_arch: RISCV64
-
-- Loongarch64:
-    plateform: 3A5000
-    l4v_arch: Loongarch64
 
 - AARCH32:
     platform: SABRE

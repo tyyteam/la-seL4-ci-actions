@@ -27,7 +27,7 @@ git config color.ui > /dev/null || \
 echo "Starting repo checkout on branch ${REPO_BRANCH} with manifest ${REPO_MANIFEST}:"
 
 if [ "${REPO_DEPTH}" -eq "0" ]
-then
+thenMANIFEST_URL
   DEPTH=""
 else
   DEPTH="--depth=${REPO_DEPTH}"

@@ -23,13 +23,14 @@ architectures: [x86, arm, riscv, Loongarch64]
 #     no_hw_build: optional; (null = false); no hw build for this platform
 
 platforms:
+      
   3A5000:
     arch: Loongarch64
     modes: [64]
     platform: 3A5000
     disabled: true
     no_hw_build: true
-    
+
   SPIKE32:
     arch: riscv
     modes: [32]
