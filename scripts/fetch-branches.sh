@@ -10,6 +10,8 @@
 
 if [ -z "${INPUT_XML}" ]
 then
+  echo " path = "${path}
+  echo " GITHUB_REPOSITORY = "${GITHUB_REPOSITORY}
   cd $(repo-util path ${GITHUB_REPOSITORY})
   fetch-branch.sh
   cd - >/dev/null
