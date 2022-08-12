@@ -12,7 +12,7 @@
 ARG WORKSPACE=/workspace
 ARG CP_DEST=/c-parser/standalone-parser
 
-FROM trustworthysystems/l4v:latest AS builder
+FROM gootal/la-l4v:latest AS builder
 
 COPY scripts/checkout-manifest.sh /usr/bin/
 RUN chmod a+rx /usr/bin/checkout-manifest.sh
@@ -22,6 +22,8 @@ RUN mkdir -p ${WORKSPACE}
 WORKDIR ${WORKSPACE}
 
 RUN checkout-manifest.sh
+RUN rm -rf l4v
+RUN git clone https://github.com/tyyteam/la-l4v.git l4v
 
 ARG CPARSER_DIR=${WORKSPACE}/l4v/tools/c-parser
 WORKDIR ${CPARSER_DIR}
@@ -32,8 +34,8 @@ RUN mkdir -p ${CP_DEST}
 WORKDIR ${CP_DEST}
 ARG CP_SRC=${CPARSER_DIR}/standalone-parser
 RUN cp ${CP_SRC}/c-parser .
-RUN cp -r ${CP_SRC}/ARM ${CP_SRC}/ARM_HYP ${CP_SRC}/AARCH64 ${CP_SRC}/RISCV64 ${CP_SRC}/X64 .
-# TODO line 35: add ${CP_SRC}/Loongarch64
+RUN cp -r ${CP_SRC}/ARM ${CP_SRC}/ARM_HYP ${CP_SRC}/AARCH64 ${CP_SRC}/RISCV64 ${CP_SRC}/X64 ${CP_SRC}/Loongarch64 .
+
 FROM scratch
 ARG CP_DEST
 COPY --from=builder ${CP_DEST} ${CP_DEST}
