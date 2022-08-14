@@ -28,6 +28,7 @@ platforms:
     arch: Loongarch64
     modes: [64]
     platform: 3A5000
+    simulation_binary: loongarch64
     disabled: true
     no_hw_build: true
 
@@ -322,3 +323,4 @@ mcs_unsupported_platforms:
 - MAAXBOARD # To be tested, for now this just copies the setting of IMX8MQ_EVK.
 - ROCKPRO64
 - ODROID_XU4
+- 3A5000 # For now this just unsupported(tyyteam).
